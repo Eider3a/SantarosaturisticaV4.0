@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Santarosaturistica</string>
+    <string name="titulo">Santarosa</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="aceptar">Accept</string>
+    <string name="iniciar">Login</string>
+    <string name="Registrese">Register</string>
+    <string name="repetirusername">password</string>
+    <string name="repetirpassword">password</string>
+    <string name="registro">Register</string>
+    <string name="cancelar">Cancel</string>
+    <string name="usuario">Eider Arango Amaya</string>
+    <string name="email">eider.a@hotmail.com</string>
+    <string name="miperfil">My perfil</string>
+    <string name="cerrar">Logout</string>
+    <string name="informacion_pueblo">Santa Rosa de Osos is a municipality and city of Colombia located in the northern subregion of the department of Antioquia.
+        It borders on the north with the municipalities of San Andrés de Cuerquía, Yarumal, Angostura and Carolina del Príncipe, on the east with the municipalities
+        of Carolina del Príncipe, Gómez Plata, Yolombó and Santo Domingo, by the municipalities of Donations and Entrerros and By the west with the municipalities of Entrerríos, Belmira and San José de la Montaña.</string>
+    <string name="principal">Main</string>
+    <string name="mas_informacion">About</string>
+    <string name="correo">Email</string>
+
+    <!---->
+    <string name="password_malo">Passwords do not match</string>
+    <string name="falta_campos">Fields are missing</string>
+    <string name="usuario_contraseña_incorrectos">User or password wrong</string>
+    <string name="llenar_todos_campos">You must fill all fields</string>
+    <string name="error_registro">Registration error</string>
+</resources>

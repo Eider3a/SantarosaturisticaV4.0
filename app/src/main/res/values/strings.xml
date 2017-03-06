@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Santarosaturistica</string>
+    <string name="titulo">Santarosa</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="iniciar">Iniciar session</string>
+    <string name="Registrese">Registrese</string>
+    <string name="repetirusername">Repetir password</string>
+    <string name="repetirpassword">Correo electronico</string>
+    <string name="registro">Registro</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="usuario">Eider Arango Amaya</string>
+    <string name="email">eider.a@hotmail.com</string>
+    <string name="miperfil">Mi perfil</string>
+    <string name="cerrar">Cerrar session</string>
+    <string name="informacion_pueblo">Santa Rosa de Osos es un municipio y ciudad de Colombia localizado en la subregión norte del departamento de Antioquia. Limita por el norte
+        con los municipios de San Andrés de Cuerquia, Yarumal, Angostura y Carolina del Príncipe, por el este con los municipios de Carolina del Príncipe, Gómez Plata, Yolombó y Santo Domingo, por el sur con los
+        municipios de Donmatías y Entrerríos y por el oeste con los municipios de Entrerríos, Belmira y San José de la Montaña.</string>
+    <string name="principal">Principal</string>
+    <string name="mas_informacion">Mas informacion</string>
+    <string name="correo">Correo</string>
+
+    <!--Manejo de los Toasts.-->
+    <string name="password_malo">Las contraseñas no coinciden</string>
+    <string name="falta_campos">Falta llenar algunos campos</string>
+    <string name="usuario_contraseña_incorrectos">Usuario o contraseña incorrectos</string>
+    <string name="llenar_todos_campos">Debes llenar todos los campos</string>
+    <string name="error_registro">Error en registro</string>
+
+</resources>
