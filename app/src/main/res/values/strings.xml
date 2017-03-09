@@ -28,4 +28,17 @@
     <string name="llenar_todos_campos">Debes llenar todos los campos</string>
     <string name="error_registro">Error en registro</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hotel1">Hotel1</string>
+    <string name="hotel2">Hotel2</string>
+    <string name="fragment1">Hotel1</string>
+    <string name="fragment2">Hotel2</string>
+    <string name="title_activity_hoteles">HotelesActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="restaurantes">Restaurantes</string>
+    <string name="hoteles">Hoteles</string>
+    <string name="turisticos">Sit. turisticos</string>
+
 </resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.eider.santarosaturistica.DemoActivity">
+
+    <!--Fragmentos estaticos: los pongo no los puedo modificar-->
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:orientation="vertical">-->
+
+        <!--<fragment-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:name="com.eider.santarosaturistica.hotel1fragment"-->
+            <!--tools:layout="@layout/fragment_hotel1fragment"-->
+            <!--android:id="@+id/fragment1" />-->
+
+        <!--<fragment-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:name="com.eider.santarosaturistica.hotel2fragment"-->
+            <!--tools:layout="@layout/fragment_hotel2fragment"-->
+            <!--android:id="@+id/fragment2" />-->
+
+    <!--</LinearLayout>-->
+
+
+    <!--Fragmentos dinamicos.-->
+
+</LinearLayout>

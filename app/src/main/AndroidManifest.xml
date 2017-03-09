@@ -10,31 +10,46 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:screenOrientation="portrait">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
-        <activity android:name=".SplashActivity"
+        <activity
+            android:name=".SplashActivity"
             android:screenOrientation="portrait">
-            <!--El intent hace que este activity se ejecute-->
+
+            <!-- El intent hace que este activity se ejecute -->
+
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PerfilActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RegistroActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".DemoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".HotelesActivity"
+            android:label="@string/title_activity_hoteles"
+            android:theme="@style/AppTheme.NoActionBar">
 
-        <activity android:name=".LoginActivity"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".PerfilActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".RegistroActivity"
-            android:screenOrientation="portrait"></activity>
+        </activity>
     </application>
 
 </manifest>
