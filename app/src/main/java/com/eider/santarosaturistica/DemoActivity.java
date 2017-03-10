@@ -35,7 +35,7 @@ public class DemoActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id=item.getItemId();
         FragmentManager fm=getSupportFragmentManager();
-        FragmentTransaction ft=fm.beginTransaction();//Siempre hay que colocar la transacion si se cambia de metodo.
+        FragmentTransaction ft=fm.beginTransaction();//Siempre hay que volver a colocar la transacion si se cambia de metodo.
 
         switch (id){
             case R.id.mfrag1:

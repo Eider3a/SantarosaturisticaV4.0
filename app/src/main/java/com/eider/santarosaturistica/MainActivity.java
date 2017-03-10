@@ -62,6 +62,29 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 break;
+
+            //Para ir a ContenidoActivity para el manejo de Fragments.
+            case R.id.mrestaurantes:
+                intent=new Intent(MainActivity.this,ContenidoActivity.class);
+                intent.putExtra("categoria","restaurantes");
+//                intent.putExtra("correo",correo);
+                startActivity(intent);
+                //finish();//Para que no se devulva.
+                break;
+            case R.id.mhoteles:
+                intent=new Intent(MainActivity.this,ContenidoActivity.class);
+                intent.putExtra("categoria","hoteles");
+//                intent.putExtra("correo",correo);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.mturisticos:
+                intent=new Intent(MainActivity.this,ContenidoActivity.class);
+                intent.putExtra("categoria","turisticos");
+//                intent.putExtra("correo",correo);
+                startActivity(intent);
+                finish();
+                break;
         }
         return super.onOptionsItemSelected(item);
     }

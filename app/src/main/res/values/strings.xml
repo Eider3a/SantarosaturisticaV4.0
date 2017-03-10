@@ -40,5 +40,6 @@
     <string name="restaurantes">Restaurantes</string>
     <string name="hoteles">Hoteles</string>
     <string name="turisticos">Sit. turisticos</string>
+    <string name="title_activity_contenido">ContenidoActivity</string>
 
 </resources>

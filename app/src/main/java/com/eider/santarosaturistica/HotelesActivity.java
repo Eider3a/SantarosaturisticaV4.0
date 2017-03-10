@@ -141,6 +141,8 @@ public class HotelesActivity extends AppCompatActivity {
             // Return a PlaceholderFragment (defined as a static inner class below).
             //return PlaceholderFragment.newInstance(position + 1);
 
+
+            //Esto es lo que carga los fragment.
             switch (position){
                 case 0:
                     hotel1fragment tab1=new hotel1fragment();
