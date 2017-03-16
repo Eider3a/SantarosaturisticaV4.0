@@ -6,7 +6,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/santa_rosa"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -25,9 +25,13 @@
         <activity
             android:name=".SplashActivity"
             android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
             <!-- El intent hace que este activity se ejecute -->
-
 
         </activity>
         <activity
@@ -39,9 +43,7 @@
         <activity
             android:name=".RegistroActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".DemoActivity">
-
-        </activity>
+        <activity android:name=".DemoActivity" />
         <activity
             android:name=".HotelesActivity"
             android:label="@string/title_activity_hoteles"
@@ -49,13 +51,17 @@
         <activity
             android:name=".ContenidoActivity"
             android:label="@string/title_activity_contenido"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ListaActivity">
+
+        </activity>
+        <activity
+            android:name=".DraweActivity"
+            android:label="@string/title_activity_drawe"
             android:theme="@style/AppTheme.NoActionBar">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

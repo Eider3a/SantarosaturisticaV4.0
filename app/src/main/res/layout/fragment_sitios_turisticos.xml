@@ -5,18 +5,47 @@
     tools:context="com.eider.santarosaturistica.SitiosTuristicosFragment">
 
     <!--Tercer fragment para la practica3-->
-    <LinearLayout
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"></LinearLayout>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="35sp"
-        android:text="@string/hotel1" />
-    <ImageView
-        android:layout_width="360dp"
-        android:layout_height="360dp"
-        android:src="@drawable/hotel1"/>
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tfragment3titulo"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:paddingBottom="15dp"/>
+            <ImageView
+                android:id="@+id/ifragment3imagen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxWidth="300dp"
+                android:maxHeight="200dp"
+                android:scaleType="fitCenter"/>
+            <TextView
+                android:textAlignment="center"
+                android:id="@+id/tfragment3descripcion"
+                android:textSize="20sp"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content" />
+            <Button
+                android:text="@string/enlace"
+                android:id="@+id/bfragment3enlace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
+
+
 
 </FrameLayout>

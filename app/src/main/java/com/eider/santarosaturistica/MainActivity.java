@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
         Bundle extras=getIntent().getExtras();
         username=extras.getString("username");
         correo=extras.getString("correo");
+//        username="Eider";
+//        correo="eider@hotmail.com";
 
         binformacion=(Button)findViewById(R.id.binformacion);
         binformacion.setOnClickListener(new View.OnClickListener() {
@@ -66,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
             //Para ir a ContenidoActivity para el manejo de Fragments.
             case R.id.mrestaurantes:
                 intent=new Intent(MainActivity.this,ContenidoActivity.class);
+                intent.putExtra("username",username);
+                intent.putExtra("correo",correo);
                 intent.putExtra("categoria","restaurantes");
 //                intent.putExtra("correo",correo);
                 startActivity(intent);
@@ -73,17 +77,21 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.mhoteles:
                 intent=new Intent(MainActivity.this,ContenidoActivity.class);
+                intent.putExtra("username",username);
+                intent.putExtra("correo",correo);
                 intent.putExtra("categoria","hoteles");
 //                intent.putExtra("correo",correo);
                 startActivity(intent);
-                finish();
+                //finish();
                 break;
             case R.id.mturisticos:
                 intent=new Intent(MainActivity.this,ContenidoActivity.class);
+                intent.putExtra("username",username);
+                intent.putExtra("correo",correo);
                 intent.putExtra("categoria","turisticos");
 //                intent.putExtra("correo",correo);
                 startActivity(intent);
-                finish();
+                //finish();
                 break;
         }
         return super.onOptionsItemSelected(item);

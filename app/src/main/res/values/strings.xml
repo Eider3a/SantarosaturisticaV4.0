@@ -41,5 +41,14 @@
     <string name="hoteles">Hoteles</string>
     <string name="turisticos">Sit. turisticos</string>
     <string name="title_activity_contenido">ContenidoActivity</string>
+    <string name="parque1">Lleras</string>
+    <string name="descrip">PArque para visitar en familia</string>
+    <string name="tdireccion">Calle 56a</string>
+    <string name="direccion">Calle 56A</string>
+    <string name="title_activity_drawe">DraweActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="enlace">Pagina principal</string>
 
 </resources>

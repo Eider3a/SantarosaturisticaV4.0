@@ -5,25 +5,54 @@
     tools:context="com.eider.santarosaturistica.HotelesFragment">
 
     <!--Primer fragment para la practica3-->
-    <LinearLayout
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center">
-
-        <TextView
-            android:layout_width="wrap_content"
+        android:fillViewport="true"
+        android:scrollbars = "vertical"
+        android:scrollbarStyle="insideInset">
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="35sp"/>
-        <ImageView
-            android:layout_width="300dp"
-            android:layout_height="300dp" />
-        <TextView
-            android:text="Descripcion"
-            android:textSize="30sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+            android:orientation="vertical"
+            android:gravity="center">
+
+
+
+            <TextView
+                android:id="@+id/tfragment1titulo"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:paddingBottom="15dp"/>
+            <ImageView
+                android:id="@+id/ifragment1imagen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxWidth="300dp"
+                android:maxHeight="200dp"
+                android:scaleType="fitCenter"/>
+            <TextView
+                android:textAlignment="center"
+                android:id="@+id/tfragment1descripcion"
+                android:textSize="20sp"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content" />
+            <Button
+                android:text="@string/enlace"
+                android:id="@+id/bfragment1enlace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
 
 
 </FrameLayout>
