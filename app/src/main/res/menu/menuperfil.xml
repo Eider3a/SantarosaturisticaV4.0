@@ -8,6 +8,24 @@
     </item>
 
     <item
+        android:id="@+id/mrestaurantes"
+        android:title="@string/restaurantes">
+
+    </item>
+
+    <item
+        android:id="@+id/mhoteles"
+        android:title="@string/hoteles">
+
+    </item>
+
+    <item
+        android:id="@+id/mturisticos"
+        android:title="@string/turisticos">
+
+    </item>
+
+    <item
         android:id="@+id/mpcerrar"
         android:title="@string/cerrar">
 

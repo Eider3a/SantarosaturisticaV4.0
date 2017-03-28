@@ -21,10 +21,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 //        Toast.makeText(this,"onCreate",Toast.LENGTH_SHORT).show();
         Bundle extras=getIntent().getExtras();
-        username=extras.getString("username");
-        correo=extras.getString("correo");
-//        username="Eider";
-//        correo="eider@hotmail.com";
+//        username=extras.getString("username");
+//        correo=extras.getString("correo");
+        username="Eider";
+        correo="eider@hotmail.com";
 
         binformacion=(Button)findViewById(R.id.binformacion);
         binformacion.setOnClickListener(new View.OnClickListener() {
@@ -89,6 +89,15 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("username",username);
                 intent.putExtra("correo",correo);
                 intent.putExtra("categoria","turisticos");
+//                intent.putExtra("correo",correo);
+                startActivity(intent);
+                //finish();
+                break;
+            case R.id.mcomidas:
+                intent=new Intent(MainActivity.this,ListaActivity.class);
+                intent.putExtra("username",username);
+                intent.putExtra("correo",correo);
+//                intent.putExtra("categoria","turisticos");
 //                intent.putExtra("correo",correo);
                 startActivity(intent);
                 //finish();

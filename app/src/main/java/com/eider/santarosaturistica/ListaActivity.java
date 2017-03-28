@@ -8,6 +8,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -22,6 +24,7 @@ public class ListaActivity extends AppCompatActivity {
 //    String [] parques=new String[]{"Bolivar","lleras","Prado","Robledo"};
     //Creo arreglo de objetos.
 
+    private String username,correo;
     //Se creo la clase Lista_Entrada.
     //Se esta instanciando un arreglo de objetos.
 
@@ -35,6 +38,12 @@ public class ListaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista);
+
+        Bundle extras=getIntent().getExtras();
+//        username=extras.getString("username");
+//        correo=extras.getString("correo");
+        username="Eider";
+        correo="eider@hotmail.com";
 
         list=(ListView)findViewById(R.id.list);
         Adapter adapter=new Adapter(this,datos);
@@ -54,6 +63,8 @@ public class ListaActivity extends AppCompatActivity {
             }
         });
     }
+
+
 
     //Vamos a crear el adaptador.
     //No le pasamos un string sino la lista de entrada.
@@ -88,5 +99,72 @@ public class ListaActivity extends AppCompatActivity {
         }
     }
 
+
+//    Esto se le agrego para la practica4.
+public boolean onCreateOptionsMenu(Menu menu) {//asignar el menu xml.
+//        return super.onCreateOptionsMenu(menu);
+    getMenuInflater().inflate(R.menu.menu,menu);//Colocal el menu, lo infla.
+    return true;
+}
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {//verificar cual fue el menu que el usuario presiono.
+//        return super.onOptionsItemSelected(item);
+        int id=item.getItemId();
+        Intent intent;
+        switch (id){
+            case R.id.mperfil:
+                intent=new Intent(ListaActivity.this,PerfilActivity.class);
+                intent.putExtra("username",username);
+                intent.putExtra("correo",correo);
+                startActivity(intent);
+                //finish();//Para que no se devulva.
+                break;
+            case R.id.mcerrar:
+                intent=new Intent(ListaActivity.this,LoginActivity.class);
+                startActivity(intent);
+                finish();
+                break;
+
+            //Para ir a ContenidoActivity para el manejo de Fragments.
+            case R.id.mrestaurantes:
+                intent=new Intent(ListaActivity.this,ContenidoActivity.class);
+                intent.putExtra("username",username);
+                intent.putExtra("correo",correo);
+                intent.putExtra("categoria","restaurantes");
+//                intent.putExtra("correo",correo);
+                startActivity(intent);
+                //finish();//Para que no se devulva.
+                break;
+            case R.id.mhoteles:
+                intent=new Intent(ListaActivity.this,ContenidoActivity.class);
+                intent.putExtra("username",username);
+                intent.putExtra("correo",correo);
+                intent.putExtra("categoria","hoteles");
+//                intent.putExtra("correo",correo);
+                startActivity(intent);
+                //finish();
+                break;
+            case R.id.mturisticos:
+                intent=new Intent(ListaActivity.this,ContenidoActivity.class);
+                intent.putExtra("username",username);
+                intent.putExtra("correo",correo);
+                intent.putExtra("categoria","turisticos");
+//                intent.putExtra("correo",correo);
+                startActivity(intent);
+                //finish();
+                break;
+            case R.id.mpprincipal:
+                intent=new Intent(ListaActivity.this,MainActivity.class);
+                intent.putExtra("username",username);
+                intent.putExtra("correo",correo);
+//                intent.putExtra("categoria","turisticos");
+//                intent.putExtra("correo",correo);
+                startActivity(intent);
+                //finish();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
 }

@@ -26,6 +26,13 @@
 
     </item>
 
+    <item
+        android:id="@+id/mcomidas"
+        android:title="@string/comidas">
+
+    </item>
+
+
 
     <item
         android:id="@+id/mcerrar"
