@@ -12,15 +12,17 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
+    <!--Sirve para modificar la cabezera del drawer.-->
+
     <ImageView
-        android:id="@+id/imageViewmain"
+        android:id="@+id/imageView"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:paddingTop="10dp"
         android:src="@drawable/usuario" />
 
     <TextView
-        android:id="@+id/tperfilnombreusuariomain"
+        android:id="@+id/tperfilnombreusuariocontenido"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="10dp"
@@ -28,7 +30,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <TextView
-        android:id="@+id/tperfilcorreomain"
+        android:id="@+id/tperfilcorreocontenido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="eider.a@android.com" />

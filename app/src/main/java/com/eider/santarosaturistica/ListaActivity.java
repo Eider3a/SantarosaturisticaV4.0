@@ -28,9 +28,14 @@ public class ListaActivity extends AppCompatActivity {
     //Se creo la clase Lista_Entrada.
     //Se esta instanciando un arreglo de objetos.
 
-    private Lista_Entrada[] datos=new Lista_Entrada[]{new Lista_Entrada(R.drawable.parque1,"parque1","Para visitar en familia","calle 56a"),
-        new Lista_Entrada(R.drawable.parque2,"parque2","Para visitar con la familia","calle 23"),
-        new Lista_Entrada(R.drawable.parque3,"parque3","Para visitar con amigos","calle 58")};
+    //Esta era la primer lista.
+//    private Lista_Entrada[] datos=new Lista_Entrada[]{new Lista_Entrada(R.drawable.parque1,"parque1","Para visitar en familia","calle 56a"),
+//        new Lista_Entrada(R.drawable.parque2,"parque2","Para visitar con la familia","calle 23"),
+//        new Lista_Entrada(R.drawable.parque3,"parque3","Para visitar con amigos","calle 58")};
+
+    private Lista_Entrada[] datos=new Lista_Entrada[]{new Lista_Entrada(R.drawable.tipico1,"Pandequeso","Para disfrutar en familia","5500$"),
+            new Lista_Entrada(R.drawable.tipico2,"Butifarra Santa Isabel","Ven y antojate de las mejores butifarras","4500$"),
+            new Lista_Entrada(R.drawable.tipico3,"Volovanes con langostino","Siempre vas a querer uno mas","10000$")};
     ListView list;
 
 
@@ -87,7 +92,7 @@ public class ListaActivity extends AppCompatActivity {
             descrip.setText(datos[position].getDescripcion());
 
             TextView direc=(TextView)item.findViewById(R.id.tdireccion);
-            direc.setText(datos[position].getDireccion());
+            direc.setText(datos[position].getPrecio());
 
             ImageView imagen=(ImageView)item.findViewById(R.id.ifoto);
             imagen.setImageResource(datos[position].getIdimagen());

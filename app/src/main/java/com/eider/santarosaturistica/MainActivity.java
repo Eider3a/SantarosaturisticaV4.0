@@ -1,7 +1,10 @@
 package com.eider.santarosaturistica;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -11,9 +14,21 @@ import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
+public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
     String username,correo;
     Button binformacion;
+
+    //PAra lo de los mapas.
+    private MapView mapview;
+    private GoogleMap mMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +50,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //PAra el manejo de los mapas.
+        mapview=(MapView)findViewById(R.id.map);
+        mapview.onCreate(savedInstanceState);
+        mapview.getMapAsync(this);
 
 
     }
@@ -105,4 +125,54 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    //Generado para trabajar con los mapas, lo genero android studio.
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        //Todo esto se trajo desde MapsActivity.
+        mMap = googleMap;
+
+        if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);//tipo de mapa.
+        mMap.setMyLocationEnabled(true);
+
+        // Add a marker in Sydney and move the camera
+//        LatLng sydney = new LatLng(-34, 151);
+//        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+//        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+
+        // Add a marker in UDEA and move the camera
+        LatLng udea = new LatLng(6.266953,-75.569111);
+        mMap.addMarker(new MarkerOptions().position(udea).title("Universidad de Antioquia").snippet("Nuestra alma mater").icon(BitmapDescriptorFactory.fromResource(R.drawable.icono)));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(udea,8));
+    }
+
+    @Override
+    protected void onResume() {
+        mapview.onResume();
+        super.onResume();
+    }
+
+    @Override
+    protected void onDestroy() {
+        mapview.onDestroy();
+        super.onDestroy();
+    }
+
+    @Override
+    public void onLowMemory() {
+        mapview.onLowMemory();
+        super.onLowMemory();
+    }
+
+    //PAra los mapas.
 }

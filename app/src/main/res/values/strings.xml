@@ -15,8 +15,7 @@
     <string name="miperfil">Mi perfil</string>
     <string name="cerrar">Cerrar session</string>
     <string name="informacion_pueblo">Santa Rosa de Osos es un municipio y ciudad de Colombia localizado en la subregión norte del departamento de Antioquia. Limita por el norte
-        con los municipios de San Andrés de Cuerquia, Yarumal, Angostura y Carolina del Príncipe, por el este con los municipios de Carolina del Príncipe, Gómez Plata, Yolombó y Santo Domingo, por el sur con los
-        municipios de Donmatías y Entrerríos y por el oeste con los municipios de Entrerríos, Belmira y San José de la Montaña.</string>
+        con los municipios de Yarumal, Angostura y Carolina del Príncipe, por el este con los municipios de  Gómez Plata, y Yolombo.</string>
     <string name="principal">Principal</string>
     <string name="mas_informacion">Mas informacion</string>
     <string name="correo">Correo</string>
@@ -51,5 +50,9 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="enlace">Pagina principal</string>
     <string name="comidas">Comidas Típicas</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_drawe_contenido">DraweContenidoActivity</string>
+    <string name="title_activity_drawe_lista">DraweListaActivity</string>
+    <string name="title_activity_drawe_recetas">DraweRecetasActivity</string>
 
 </resources>

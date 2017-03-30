@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 //Verificar que los datos que se colocaron en el login sean los mismos que hay en el registro.
                 if (eusername.getText().toString().equals(username) && econtrasenia.getText().toString().equals(password)){
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, DraweActivity.class);
                     intent.putExtra("username",username);
                     intent.putExtra("correo",correo);
                     startActivity(intent);
