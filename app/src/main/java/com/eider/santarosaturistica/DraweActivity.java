@@ -50,10 +50,10 @@ public class DraweActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         Bundle extras=getIntent().getExtras();
-//        username=extras.getString("username");
-//        correo=extras.getString("correo");
-        username="Eider Arango Amaya";
-        correo="eider@hotmail.com";
+        username=extras.getString("username");
+        correo=extras.getString("correo");
+//        username="Eider Arango Amaya";
+//        correo="eider@hotmail.com";
 
         //Para colocar la informacion del usuario en el NavigationDrawer.
 //        tnombre=(TextView)findViewById(R.id.tperfilnombreusuariomain);
