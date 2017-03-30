@@ -2,6 +2,7 @@ package com.eider.santarosaturistica;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -42,12 +43,22 @@ public class DraweActivity extends AppCompatActivity
     //Para el perfil de usuario.
     TextView tnombre,tcorreo;
 
+    //PReferencias compartidas.
+    SharedPreferences prefs;
+    SharedPreferences.Editor editor;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawe);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        //Para el manejo de las preferencias.
+        prefs=getSharedPreferences("Mispreferencias",MODE_PRIVATE);
+        editor=prefs.edit();
 
         Bundle extras=getIntent().getExtras();
         username=extras.getString("username");
@@ -194,6 +205,9 @@ public class DraweActivity extends AppCompatActivity
             //finish();
 
         } else if (id == R.id.drawer_cerrar_sesion) {
+            //Hay que hacerlo en todas opciones de cerrar sesion.
+            editor.putInt("login",-1);//para que coloque la preferencia login en -1 y no pase derecho al logearse.
+            editor.commit();//Siempre hay que hacer un commit.
             intent=new Intent(DraweActivity.this,LoginActivity.class);
             startActivity(intent);
             finish();
