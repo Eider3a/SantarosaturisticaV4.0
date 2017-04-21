@@ -24,20 +24,34 @@
                 android:layout_height="wrap_content"
                 android:textSize="30sp"
                 android:paddingBottom="15dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
             <ImageView
                 android:id="@+id/ifragment2imagen"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_height="190dp"
                 android:adjustViewBounds="true"
-                android:maxWidth="300dp"
-                android:maxHeight="200dp"
                 android:scaleType="fitCenter" />
+            <android.support.v4.widget.Space
+                android:layout_width="10dp"
+                android:layout_height="0dp" />
+            <com.google.android.gms.maps.MapView
+                android:layout_width="200dp"
+                android:layout_height="190dp"
+                android:id="@+id/maprestaurantes"></com.google.android.gms.maps.MapView>
+
+        </LinearLayout>
+
+
             <TextView
                 android:id="@+id/tfragment2descripcion"
                 android:textAlignment="center"
                 android:textSize="20sp"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content" />
+
             <Button
                 android:text="@string/enlace"
                 android:id="@+id/bfragment2enlace"

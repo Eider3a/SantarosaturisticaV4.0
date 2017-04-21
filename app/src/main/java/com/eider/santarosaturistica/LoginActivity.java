@@ -16,7 +16,7 @@ public class LoginActivity extends AppCompatActivity {
     Button biniciar,bregistrese;
     String username,password,correo;
 
-    //PReferencias compartidas.
+    //Preferencias compartidas.
     SharedPreferences prefs;
     SharedPreferences.Editor editor;
 
@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
         prefs=getSharedPreferences("Mispreferencias",MODE_PRIVATE);
         editor=prefs.edit();
 
-        username=prefs.getString("username","noname");
+        username=prefs.getString("username","noname");//Si no la encuentra la coloca con el nombre de noname.
         password=prefs.getString("password","nopass");
         correo=prefs.getString("correo","nocorreo");
 

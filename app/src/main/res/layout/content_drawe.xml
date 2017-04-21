@@ -38,7 +38,7 @@
         <com.google.android.gms.maps.MapView
             android:layout_width="230dp"
             android:layout_height="180dp"
-            android:id="@+id/map"></com.google.android.gms.maps.MapView>
+            android:id="@+id/mapdraweactivity"></com.google.android.gms.maps.MapView>
 
         <Button
             android:id="@+id/binformacion"

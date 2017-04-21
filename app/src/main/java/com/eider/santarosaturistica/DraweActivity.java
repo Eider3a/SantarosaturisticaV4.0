@@ -36,14 +36,14 @@ public class DraweActivity extends AppCompatActivity
     String username,correo;
     Button binformacion;
 
-    //PAra lo de los mapas.
+    //Para lo de los mapas.
     private MapView mapview;
     private GoogleMap mMap;
 
     //Para el perfil de usuario.
     TextView tnombre,tcorreo;
 
-    //PReferencias compartidas.
+    //Preferencias compartidas.
     SharedPreferences prefs;
     SharedPreferences.Editor editor;
 
@@ -100,7 +100,7 @@ public class DraweActivity extends AppCompatActivity
         });
 
         //PAra el manejo de los mapas.
-        mapview=(MapView)findViewById(R.id.map);
+        mapview=(MapView)findViewById(R.id.mapdraweactivity);
         mapview.onCreate(savedInstanceState);
         mapview.getMapAsync(this);
 
@@ -233,7 +233,7 @@ public class DraweActivity extends AppCompatActivity
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
-        mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);//tipo de mapa.
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);//tipo de mapa.
         mMap.setMyLocationEnabled(true);
 
         // Add a marker in Sydney and move the camera
@@ -242,11 +242,11 @@ public class DraweActivity extends AppCompatActivity
 //        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
 
         // Add a marker in UDEA and move the camera
-        LatLng santarosa = new LatLng(6.647828,-75.460764);
+        LatLng pueblo = new LatLng(6.643119,-75.460482);
 //        La proxima linea le agregaba un icono personalizado a la posicion.
 //        mMap.addMarker(new MarkerOptions().position(santarosa).title("Santa rosa de osos").snippet("Mí pueblo").icon(BitmapDescriptorFactory.fromResource(R.drawable.icono)));
-        mMap.addMarker(new MarkerOptions().position(santarosa).title("Santa rosa de osos").snippet("Mí pueblo"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(santarosa,8));
+        mMap.addMarker(new MarkerOptions().position(pueblo).title("Santa rosa de osos").snippet("Mí pueblo"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(pueblo,11));
     }
 
     @Override

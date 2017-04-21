@@ -1,6 +1,7 @@
 package com.eider.santarosaturistica;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -38,6 +39,10 @@ public class DraweContenidoActivity extends AppCompatActivity
     //Para el perfil de usuario.
     TextView tnombre,tcorreo;
 
+    //Preferencias compartidas.
+    SharedPreferences prefs;
+    SharedPreferences.Editor editor;
+
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -62,6 +67,10 @@ public class DraweContenidoActivity extends AppCompatActivity
         username = extras.getString("username");
         correo = extras.getString("correo");
         categoria = extras.getString("categoria");
+
+        //Para el manejo de las preferencias.
+        prefs=getSharedPreferences("Mispreferencias",MODE_PRIVATE);
+        editor=prefs.edit();
 
         //Para colocar la informacion del usuario en el NavigationDrawer.
 //        tnombre=(TextView)findViewById(R.id.tperfilnombreusuario);
@@ -260,6 +269,8 @@ public class DraweContenidoActivity extends AppCompatActivity
             //finish();
 
         } else if (id == R.id.drawer_cerrar_sesion) {
+            editor.putInt("login",-1);//para que coloque la preferencia login en -1 y no pase derecho al logearse.
+            editor.commit();//Siempre hay que hacer un commit.
             intent = new Intent(DraweContenidoActivity.this, LoginActivity.class);
             startActivity(intent);
             finish();
@@ -292,6 +303,8 @@ public class DraweContenidoActivity extends AppCompatActivity
                         data.putInt("imagen", rutaimg1);
                         data.putString("informacion", descr1);
                         data.putString("enlace", "http://paradorsantarosadeosos.blogspot.com.co");
+                        data.putDouble("lat",6.6482113);
+                        data.putDouble("long",-75.461429);
                         tab1.setArguments(data);
                         return tab1;
 
@@ -302,6 +315,8 @@ public class DraweContenidoActivity extends AppCompatActivity
                         data.putInt("imagen", rutaimg2);
                         data.putString("informacion", descr2);
                         data.putString("enlace", "http://www.amarillascolombia.co/colombia/santa-rosa-de-osos/restaurantes/restaurante-juan-gourmet-340268#.WMnhG302vIU");
+                        data.putDouble("lat",6.6472953);
+                        data.putDouble("long",-75.4607177);
                         tab2.setArguments(data);
                         return tab2;
                     case 2:
@@ -311,6 +326,8 @@ public class DraweContenidoActivity extends AppCompatActivity
                         data.putInt("imagen", rutaimg3);
                         data.putString("informacion", descr3);
                         data.putString("enlace", "https://www.nexdu.com/co/santa-rosa-de-osos-ant/restaurantes/restaurante-bar-puesta-del-sol-357050");
+                        data.putDouble("lat",6.6488234);
+                        data.putDouble("long",-75.4598942);
                         tab3.setArguments(data);
                         return tab3;
                     default:
@@ -325,6 +342,8 @@ public class DraweContenidoActivity extends AppCompatActivity
                         data.putInt("imagen", rutaimg1);
                         data.putString("informacion", descr1);
                         data.putString("enlace", "http://www.paginasamarillas.com.co/empresas/hotel-cortejo-imperial-eu/santa-rosa-de-osos-15384876");
+                        data.putDouble("lat",6.6483474);
+                        data.putDouble("long",-75.4595998);
                         tab1.setArguments(data);
                         return tab1;
 
@@ -335,6 +354,8 @@ public class DraweContenidoActivity extends AppCompatActivity
                         data.putInt("imagen", rutaimg2);
                         data.putString("informacion", descr2);
                         data.putString("enlace", "http://www.paginasamarillas.com.co/empresas/hotel-la-circasia/santa-rosa-de-osos-30248969");
+                        data.putDouble("lat",6.6483705);
+                        data.putDouble("long",-75.4598471);
                         tab2.setArguments(data);
                         return tab2;
                     case 2:
@@ -344,6 +365,8 @@ public class DraweContenidoActivity extends AppCompatActivity
                         data.putInt("imagen", rutaimg3);
                         data.putString("informacion", descr3);
                         data.putString("enlace", "http://www.hotelsantarosadeosos.com");
+                        data.putDouble("lat",6.6522049);
+                        data.putDouble("long",-75.456649);
                         tab3.setArguments(data);
                         return tab3;
                     default:
@@ -358,6 +381,8 @@ public class DraweContenidoActivity extends AppCompatActivity
                         data.putInt("imagen", rutaimg1);
                         data.putString("informacion", descr1);
                         data.putString("enlace", "https://www.tripadvisor.co/Attraction_Review-g4454684-d7789496-Reviews-Catedral_Nuestra_Senora_del_Rosario_de_Chiquinquira-Santa_Rosa_de_Osos_Antioquia.html");
+                        data.putDouble("lat",6.6482401);
+                        data.putDouble("long",-75.4610103);
                         tab1.setArguments(data);
                         return tab1;
 
@@ -368,6 +393,8 @@ public class DraweContenidoActivity extends AppCompatActivity
                         data.putInt("imagen", rutaimg2);
                         data.putString("informacion", descr2);
                         data.putString("enlace", "https://es.wikipedia.org/wiki/Capilla_del_Señor_de_la_Humildad_(Santa_Rosa_de_Osos)");
+                        data.putDouble("lat",6.6468117);
+                        data.putDouble("long",-75.4595256);
                         tab2.setArguments(data);
                         return tab2;
                     case 2:
@@ -377,6 +404,8 @@ public class DraweContenidoActivity extends AppCompatActivity
                         data.putInt("imagen", rutaimg3);//LLeva el id de la imagen en tipo int.
                         data.putString("informacion", descr3);
                         data.putString("enlace", "https://es.wikipedia.org/wiki/Basílica_menor_de_Nuestra_Señora_de_las_Misericordias_(Santa_Rosa_de_Osos)");
+                        data.putDouble("lat",6.6421166);
+                        data.putDouble("long",-75.4601538);
                         tab3.setArguments(data);
                         return tab3;
                     default:

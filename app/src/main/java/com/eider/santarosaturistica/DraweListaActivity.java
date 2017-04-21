@@ -2,6 +2,7 @@ package com.eider.santarosaturistica;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -40,6 +41,10 @@ public class DraweListaActivity extends AppCompatActivity
     //Para el perfil de usuario.
     TextView tnombre,tcorreo;
 
+    //Preferencias compartidas.
+    SharedPreferences prefs;
+    SharedPreferences.Editor editor;
+
     private Lista_Entrada[] datos=new Lista_Entrada[]{new Lista_Entrada(R.drawable.tipico1,"Pandequeso","Para disfrutar en familia","5500$"),
             new Lista_Entrada(R.drawable.tipico2,"Butifarra Santa Isabel","Ven y antojate de las mejores butifarras","4500$"),
             new Lista_Entrada(R.drawable.tipico3,"Volovanes con langostino","Siempre vas a querer uno mas","10000$")};
@@ -49,6 +54,10 @@ public class DraweListaActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawe_lista);
+
+        //Para el manejo de las preferencias.
+        prefs=getSharedPreferences("Mispreferencias",MODE_PRIVATE);
+        editor=prefs.edit();
 
         Bundle extras=getIntent().getExtras();
         username=extras.getString("username");
@@ -271,6 +280,8 @@ public class DraweListaActivity extends AppCompatActivity
             //finish();
 
         } else if (id == R.id.drawer_cerrar_sesion) {
+            editor.putInt("login",-1);//para que coloque la preferencia login en -1 y no pase derecho al logearse.
+            editor.commit();//Siempre hay que hacer un commit.
             intent=new Intent(DraweListaActivity.this,LoginActivity.class);
             startActivity(intent);
             finish();

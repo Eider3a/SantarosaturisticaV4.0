@@ -32,12 +32,13 @@
         <activity
             android:name=".SplashActivity"
             android:screenOrientation="portrait">
+
+            <!-- El intent hace que este activity se ejecute -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <!-- El intent hace que este activity se ejecute -->
 
         </activity>
         <activity
