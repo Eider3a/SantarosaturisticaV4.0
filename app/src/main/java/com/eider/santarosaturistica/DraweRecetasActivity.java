@@ -1,6 +1,7 @@
 package com.eider.santarosaturistica;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -26,6 +27,12 @@ public class DraweRecetasActivity extends AppCompatActivity
     TextView ttitulo,treceta;
     ImageView iimagen;
 
+    //Preferencias compartidas.
+    SharedPreferences prefs;
+    SharedPreferences.Editor editor;
+
+
+
     //Para el perfil de usuario.
     TextView tnombre,tcorreo;
 
@@ -35,6 +42,10 @@ public class DraweRecetasActivity extends AppCompatActivity
         setContentView(R.layout.activity_drawe_recetas);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        //Para el manejo de las preferencias.
+        prefs=getSharedPreferences("Mispreferencias",MODE_PRIVATE);
+        editor=prefs.edit();
 
         Bundle extras=getIntent().getExtras();
         username=extras.getString("username");
@@ -168,6 +179,8 @@ public class DraweRecetasActivity extends AppCompatActivity
             //finish();
 
         } else if (id == R.id.drawer_cerrar_sesion) {
+            editor.putInt("login",-1);//para que coloque la preferencia login en -1 y no pase derecho al logearse.
+            editor.commit();//Siempre hay que hacer un commit.
             intent=new Intent(DraweRecetasActivity.this,LoginActivity.class);
             startActivity(intent);
             finish();
